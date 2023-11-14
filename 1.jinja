@@ -1,0 +1,18 @@
+{% macro checkbox(name, string, numbers)%}
+{% set parsed = string.split(' ')%}
+{% for i, str in enumerate(parsed) %}
+<div>
+<input type="checkbox" name="{{name}}" id="{{i}}_checkbox"/ {% if i in numbers %}checked=""{% endif %}>
+<label for="{{i}}_checkbox">{{str}}</label>
+</div>
+{% endfor %}
+{% endmacro %}
+
+
+
+<html>
+<body>
+    {{checkbox(name, string, numbers)}}
+</body>
+
+</html>
